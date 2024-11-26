@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.preprocessing import LabelEncoder
 
 ## loads json dataset into a pandas dataframe
-with open('data/dataset.json', 'r') as f:
+with open('data/raw_data.json', 'r') as f:
     data = json.load(f)
 
 records = []
@@ -43,4 +43,4 @@ df_final = df.drop_duplicates(subset=['post_id']).merge(label_votes, on='post_id
 df_final = df_final[['post_id', 'text', 'final_label', 'annotator_id', 'target', 'rationale']]
 
 ## exports the dataframe as a pickle file
-df_final.to_pickle('data/transformed_dataset.pkl')
+df_final.to_pickle('data/formatted_data.pkl')

@@ -49,7 +49,7 @@ def tokenize(texts: list[str], max_len: int=default_max_len, tokenizer: BertToke
     return {'input_ids': input_ids, 'attention_masks': attention_masks}
 
 ## load the dataset
-df = pd.read_pickle('data/transformed_dataset.pkl')
+df = pd.read_pickle('data/formatted_data.pkl')
 
 ## tokenize the texts
 tokenized_texts = tokenize(df['text'].tolist())
