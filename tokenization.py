@@ -57,4 +57,5 @@ tokenized_texts = tokenize(df['text'].tolist())
 ## add encoded labels
 tokenized_texts['labels'] = torch.tensor(df['final_label'].values)
 
-## TODO: export this somewhere, then split the tokenized texts into train/test (remember to balance the dataset)
+## export encoded text
+torch.save(tokenized_texts, 'data/text.pt')
