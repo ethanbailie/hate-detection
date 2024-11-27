@@ -4,7 +4,8 @@ import torch
 import json
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader, RandomSampler, SequentialSampler, Subset
-from transformers import BertForSequenceClassification, BertTokenizer, AdamW, get_linear_schedule_with_warmup
+from torch.optim import AdamW
+from transformers import BertForSequenceClassification, BertTokenizer, get_linear_schedule_with_warmup
 from sklearn.metrics import classification_report
 import numpy as np
 import time
@@ -311,7 +312,7 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     ## save the model
-    model_to_save = model.module if hasattr(model, 'module') else model  # Handle multi-GPU
+    model_to_save = model.module if hasattr(model, 'module') else model
 
     ## save the model and tokenizer
     model_to_save.save_pretrained(output_dir)
