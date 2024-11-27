@@ -163,3 +163,4 @@ cython_debug/
 /model_output
 data/text.pt
 data/formatted_data.pkl
+/conda
