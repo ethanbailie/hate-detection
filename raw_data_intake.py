@@ -43,4 +43,4 @@ df_final = df.drop_duplicates(subset=['post_id']).merge(label_votes, on='post_id
 df_final = df_final[['post_id', 'text', 'final_label', 'annotator_id', 'target', 'rationale']]
 
 ## exports the dataframe as a pickle file
-df_final.to_pickle('data/formatted_data.pkl')
+df_final.to_pickle('data/formatted_data.pkl', protocol=4)
