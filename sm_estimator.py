@@ -25,9 +25,9 @@ huggingface_estimator = HuggingFace(
     instance_type='ml.p3.2xlarge',                
     instance_count=1,
     role=role,
-    transformers_version='4.46.3',                    
-    pytorch_version='2.5.1',                         
-    py_version='py310',                             
+    transformers_version='4.6',                    
+    pytorch_version='1.7',                         
+    py_version='py36',                             
     hyperparameters=hyperparameters,
     output_path='s3://hate-detection'             
 )
